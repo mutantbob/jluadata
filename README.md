@@ -1,13 +1,13 @@
 This git repository hosts java source code for a library that can parse text that is formatted as Lua data assignments and literals.
 
-The original application was parsing variables from World Of Warcrafts WTF/Accounts/*/SavedVariables/ directory (where WoW Lua add-ons store their configurations and data).
+The original application was parsing variables from World Of Warcraft's WTF/Accounts/*/SavedVariables/ directory (where WoW Lua add-ons store their configurations and data).
 
 As of March 2013 it is not heavily tested for use with all legal Lua syntax.  If you find a legal Lua syntax it can't handle I can work with you to add a unit test and fix it.
 
 The two idioms for using this library are
 
-  Map<String,Object> dictionary = new LuaParser(new StringReader(lua)).parseDictionary(); // file with x=y syntax
-  Object o = new LuaParser(new StringReader(lua)).parse(); // file with a single object like { ["a"] = 7 }
+    Map<String,Object> dictionary = new LuaParser(new StringReader(lua)).parseDictionary(); // file with x=y syntax
+    Object o = new LuaParser(new StringReader(lua)).parse(); // file with a single object like { ["a"] = 7 }
   
 
 
