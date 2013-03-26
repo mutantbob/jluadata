@@ -86,4 +86,15 @@ public class LuaDumper
 
         return rval.toString();
     }
+
+    public static String dumpAsLuaDict(Map<String, Object> dict)
+    {
+        StringBuilder rval = new StringBuilder();
+
+        for (Map.Entry<String, Object> entry : dict.entrySet()) {
+            rval.append(entry.getKey()+" = "+dumpAsLua(entry.getValue())+"\n\n");
+        }
+
+        return rval.toString();
+    }
 }
