@@ -272,7 +272,7 @@ public class LuaParser
             }
 
             char ch = (char) ch_;
-            if (Character.isLetterOrDigit(ch)) {
+            if (Character.isLetterOrDigit(ch) || ch == '_') {
                 rval.append(ch);
             } else if (Character.isWhitespace(ch)) {
                 break;

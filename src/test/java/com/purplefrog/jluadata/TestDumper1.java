@@ -2,6 +2,8 @@ package com.purplefrog.jluadata;
 
 import junit.framework.*;
 
+import java.io.*;
+import java.text.*;
 import java.util.*;
 
 /**
@@ -76,6 +78,16 @@ public class TestDumper1
             "        [\"hail\"] = \"bob\",\n" +
             "    }, -- [4]\n" +
             "}", LuaDumper.dumpAsLua(l));
+    }
+
+    public void test5()
+        throws IOException, ParseException
+    {
+        String lua = "Alex_Polansky = 1337";
+
+        LuaParser parser = new LuaParser(new StringReader(lua));
+        Map<String, Object> a = parser.parseDictionary();
+        assertEquals(1337, a.get("Alex_Polansky"));
     }
 
 }
